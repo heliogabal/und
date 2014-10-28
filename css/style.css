@@ -1,0 +1,569 @@
+body {
+  background: #903;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: 100%;
+  line-height: 1.6;
+  margin: 0 !important;
+}
+
+/* Layout */
+header, .page, footer {
+  background: none repeat scroll 0 0 #FFF;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+header[role="banner"] {
+  margin-top: 0em;
+  border: 0;
+}
+body.sidebar-first div[role="main"] {
+    left: 25%;
+    width: 75%;
+}
+body.sidebar-first div.sidebar-first {
+    left: -75%;
+    width: 25%;
+    font-size: .8em;
+    line-height: 1.2;
+}
+
+.siteinfo {
+  padding: 5% 5% 2% 5%;
+}
+.header-region {
+  padding: 0 5% 3% 5%;
+  width: 100%;
+}
+.header-region > div {
+  width: auto;
+}
+#main-content,
+div.sidebar-first,
+div.sidebar-second {
+  padding: 2% 0 2% 5%;
+  border: 0;
+}
+
+/* Typography */
+h1 {
+  border-bottom: 1px solid #eee;
+    font-size: 1.5em;
+    /*font-variant: small-caps;*/
+    margin-bottom: 1.5em;
+    padding-bottom: 0.75em;
+}
+h2 {
+  font-size: 1.6em;
+  /*font-variant: small-caps;*/
+}
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+a {
+  color: #903;
+  font-weight: normal;
+}
+a:active, a:hover {
+  color: #903;
+}
+a:visited {
+  color: #963;
+}
+
+p {
+  margin: 1em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+#main-content ul {
+  padding-left: 1em;
+}
+#main-content ul li {
+  list-style: disc;
+  margin-bottom: 0.2em;
+}
+.image-field-caption {
+  font-size: .8em;
+  margin: 0;
+  float: left;
+  clear: both;
+  width: auto;
+  max-width: 250px;
+}
+.image-field-caption p {
+  margin-top: .2em;
+  margin-bottom: 1.6em;
+  line-height: 1.2;
+}
+
+/* Paragraphs */
+/* Text */
+
+/* Nur Text */
+.paragraphs-item-text {
+
+}
+.paragraphs-items-field-inhalt .field-name-field-text {
+  float: left;
+}
+.paragraphs-items-field-inhalt .field-name-field-image {
+  float: left;
+  max-width: 250px;
+  margin: 1em;
+}
+
+.paragraphs-items-field-inhalt .field-name-field-image > img {
+  margin-bottom: 1em;
+}
+.paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+  max-width: 23em;
+}
+/* Text mit Bild links*/
+.paragraphs-item-text-mit-bild-links {
+  clear: both;
+}
+.paragraphs-item-text-mit-bild-links img {
+  float: left;
+  margin: 1em 1em 0 0;
+}
+.paragraphs-item-text-mit-bild-links .field-type-text-long,
+.projekt > .group-right,
+.ds-2col-stacked-fluid > .group-right {
+    float: right;
+    width: auto;
+    max-width: 23em;
+    padding-right: 5%;
+}
+.paragraphs-item-text-mit-bild-links .field-type-image,
+.projekt > .group-left,
+.ds-2col-stacked-fluid > .group-left {
+  float: left;
+  width: auto;
+  min-width: 300px;
+  padding-right: 2em;
+}
+/* Text mit Bild rechts*/
+.paragraphs-item-text-mit-bild-rechts {
+  clear: both;
+}
+.paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+.publikation > .group-left,
+.ds-2col-fluid > .group-left,
+.ds-2col-stacked-fluid > .group-left {
+    float: left;
+    width: auto;
+    max-width: 23em;
+    padding-right: 2em;
+}
+.paragraphs-item-text-mit-bild-rechts .field-type-image,
+.publikation > .group-right,
+.ds-2col-fluid > .group-right,
+.ds-2col-stacked-fluid > .group-right {
+  float: right;
+  width: auto;
+  min-width: 300px;
+  padding-right: 5%;
+}
+
+/* Menu */
+.active, .active-trail {
+  font-weight: normal;
+}
+.language-switcher-locale-url {
+  border-bottom: 1px solid #903;
+}
+/* Language Switcher im Header */
+.language {
+  float: right !important;
+}
+.header-region .language-switcher-locale-url {
+  border: 0;
+}
+.header-region .language-switcher-locale-url li {
+  float: left;
+}
+.header-region .language-switcher-locale-url li {
+  color: #903;
+  font-weight: normal;
+  font-variant: small-caps;
+  padding: .5em;
+}
+.locale-untranslated {
+  color: #903;
+  font-weight: normal;
+  font-variant: small-caps;
+}
+
+/* General Menu Formatting */
+nav ul {
+  padding: 0;
+}
+nav ul li a {
+  padding: .5em 1em .5em 0;
+  margin: 0 1em 0 0;
+  display: inline-block;
+}
+nav ul li a:active,
+nav ul li a:visited {
+  color: #000;
+  text-decoration: none;
+}
+nav ul li a:hover,
+nav ul li a.active,
+.language-switcher-locale-url li a:hover,
+.language-switcher-locale-url li a.active {
+  color: #903;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/* Sidebar Menu */
+
+div.sidebar-first nav ul li a,
+div.sidebar-first .language-switcher-locale-url li a{
+  color: #000;
+  display: block;
+  padding: .5em 0;
+  border-top: 1px solid #903;
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+div.sidebar-first nav ul li.expanded, li.collapsed, li.leaf {
+    margin: 0;
+    padding: 0;
+}
+div.sidebar-first nav ul li.expanded {
+  border: 0;
+}
+div.sidebar-first nav ul ul {
+  border-bottom: 0;
+}
+div.sidebar-first nav ul li ul li a {
+  border: 0;
+  font-weight: normal;
+  padding: 0 0 .5em 1em;
+}
+
+/* Horizontal Menu */
+.header-region nav ul, ul.nice-menu {
+  position: relative;
+}
+.header-region nav ul li, ul.nice-menu li {
+  float: left;
+  text-align: left;
+  padding: 0 !important;
+  position: relative;
+  background: transparent;
+  border: 0;
+}
+
+ul.nice-menu-down li.menuparent {
+    background: url("../images/arrow-down.png") no-repeat scroll right center transparent;
+}
+ul.nice-menu-down li.menuparent ul li {
+  background: #eee;
+  border-bottom: 1px solid #fefefc;
+}
+ul.nice-menu li.over a {
+  background: #eee;
+}
+.header-region nav ul li a, ul.nice-menu li a {
+  display: block;
+   text-decoration: none;
+   color: #000;
+   padding: 5px 20px;
+   width: auto;
+  font-variant: small-caps;
+  font-size: 1.2em;
+}
+.header-region nav ul li a:hover, ul.nice-menu li a:hover {
+  color: #fff;
+  background-color: #903;
+}
+/* 2. Ebene */
+ul.nice-menu ul {
+  top: 2.2em;
+  border-top: 1px solid #fefefc;
+  width: auto;
+}
+ul.nice-menu ul li {
+  width: 100%;
+}
+.header-region nav ul ul {
+  list-style: none;
+    position: absolute;
+    left:-9999px /* you may even use "display: none"*/
+}
+.header-region nav ul li:hover ul {
+  left: 0px;
+}
+.header-region nav ul li ul li {
+  float: none !important;
+  z-index: 99;
+}
+.header-region nav ul li ul li a {
+  width: auto;
+}
+
+/* Footer Menu */
+
+footer nav li {
+  display: inline;
+}
+
+/* Responsive Mean Menu */
+.mean-container .mean-bar,
+.mean-container .mean-nav,
+.mean-container .mean-nav ul li a.mean-expand:hover {
+  background: #903;
+}
+
+
+/* Künstler und Kooperationen */
+
+.artist h2 {
+  font-size: 1em;
+  float: left;
+  width: 22%;
+  padding-right: 3%;
+  margin-top: 1em;
+}
+.artist {
+  border-top: 1px solid #eee;
+  position: relative;
+}
+.artists .field-name-body,
+.institution .field-name-body {
+  float: right;
+  width: 75%;
+  padding-right: 5%;
+}
+.artists .view-header,
+.institution .view-header {
+  padding-right: 5%;
+}
+.field-name-node-link {
+  /*float: right;
+  text-align: right;
+  width: 100%;*/
+  padding: 0 2% 1em 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* Publikationen */
+.page-publikationen h1 {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+.field-name-field-kleingedrucktes {
+  font-size: .8em;
+}
+.publikation h2, .projekt h2 {
+  margin-top: -0.4em;
+}
+.publikation > div > div {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+}
+.publikation img {
+  float: right;
+}
+.publikation > div:last-of-type {
+  border: 0;
+}
+
+/* Projekte */
+.page-projekte h1 {
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+/*.ds-2col-stacked-fluid.node-projekt,
+.ds-2col-fluid.node-projekt {
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+.node-projekt.node-projekt h2,
+.ds-2col-fluid.node-projekt h2 {
+	margin-top: 0;
+}*/
+.projekt > div {
+  position: relative;
+  float: left;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2em;
+  padding: 0 5% 1em 0;
+}
+.projekt > div:last-of-type {
+  border: 0;
+}
+.projekt img {
+  float: left;
+  clear: left;
+  margin-bottom: 1em;
+  padding-right: 2em;
+}
+.projekt .field-name-title,
+.projekt .field-name-body,
+.projekt .field-name-field-downloads {
+  margin-left: 320px;
+}
+
+/* News */
+/*.news {
+  border-bottom: 1px solid #eee;
+}
+.news > div {
+  float: left;
+  width: 100%;
+  padding-right: 5%;
+}*/
+.news, .newsletter {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1em;
+  overflow: hidden;
+}
+div.sidebar-first h2 {
+  margin-bottom: .5em;
+}
+.news h3 {
+  margin-bottom: .5em;
+}
+.newsletter > div {
+  margin-bottom: .5em;
+}
+.newsletter_archive {
+  float: right;
+}
+.back {
+  margin: 1em 0;
+  display: block;
+}
+.views-more-link {
+  float: right;
+}
+.node-type-news .field-name-body {
+  float: left;
+  width: 55%;
+  margin-right: 5%;
+}
+.node-type-news .field-name-field-image {
+  float: left;
+  width: 35%;
+  padding-right: 5%;
+}
+.field-name-back-link-news {
+  clear: both;
+}
+.mailchimp input {
+  max-width: 15em;
+  margin-bottom: 0.3em;
+}
+.marker, .form-required {
+  color: #903;
+}
+@media only screen and (min-width : 55em) {
+  .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+    max-width: 30em;
+  }
+  .paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+  .paragraphs-item-text-mit-bild-links .field-type-text-long,
+  .projekt > .group-right,
+  .publikation > .group-left,
+  .ds-2col-fluid > .group-left,
+  .ds-2col-stacked-fluid > .group-left {
+      max-width: 30em;
+    }
+}
+@media only screen and (min-width : 60em) {
+  .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+    max-width: 34em;
+  }
+  .paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+  .paragraphs-item-text-mit-bild-links .field-type-text-long,
+  .projekt > .group-right,
+  .publikation > .group-left,
+  .ds-2col-fluid > .group-left,
+  .ds-2col-stacked-fluid > .group-left {
+      max-width: 34em;
+    }
+}
+@media only screen and (min-width : 65em) {
+  .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+    max-width: 39em;
+  }
+  .paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+  .paragraphs-item-text-mit-bild-links .field-type-text-long,
+  .projekt > .group-right,
+  .publikation > .group-left,
+  .ds-2col-fluid > .group-left,
+  .ds-2col-stacked-fluid > .group-left {
+      max-width: 39em;
+      padding-right: 1em;
+    }
+}
+@media only screen and (min-width : 75em) {
+  body {
+    font-size: 110%;
+    margin: 1em 0;
+  }
+  .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+    max-width: 43em;
+  }
+  .paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+  .paragraphs-item-text-mit-bild-links .field-type-text-long,
+  .projekt > .group-right,
+  .publikation > .group-left,
+  .ds-2col-fluid > .group-left,
+  .ds-2col-stacked-fluid > .group-left {
+      max-width: 43em;
+    }
+    /*.news > div {
+      float:left;
+      width: 30%;
+      padding-right: 3%;
+    }*/
+}
+@media only screen and (min-width : 80em) {
+  body {
+    font-size: 115%;
+    margin: 1em 0;
+  }
+  .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+    max-width: 44em;
+  }
+  .paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+  .paragraphs-item-text-mit-bild-links .field-type-text-long,
+  .projekt > .group-right,
+  .publikation > .group-left,
+  .ds-2col-fluid > .group-left,
+  .ds-2col-stacked-fluid > .group-left {
+      max-width: 44em;
+    }
+}
+@media only screen and (min-width : 90em) {
+  body {
+    font-size: 125%;
+  }
+  .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
+    max-width: 49em;
+  }
+  .paragraphs-item-text-mit-bild-rechts .field-type-text-long,
+  .paragraphs-item-text-mit-bild-links .field-type-text-long,
+  .projekt > .group-right,
+  .publikation > .group-left,
+  .ds-2col-fluid > .group-left,
+  .ds-2col-stacked-fluid > .group-left {
+      max-width: 49em;
+      padding-right: 2em;
+    }
+}
