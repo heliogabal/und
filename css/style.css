@@ -1,3 +1,11 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   background: #903;
   font-family: Helvetica, Arial, Verdana, sans-serif;
@@ -7,28 +15,29 @@ body {
 }
 
 /* Layout */
+#main-content, div.sidebar-first, div.sidebar-second {
+  float: none;
+  width: 100%;
+  padding: 2% 5% !important;
+}
 header, .page, footer {
   background: none repeat scroll 0 0 #FFF;
   max-width: 1400px;
   margin: 0 auto;
 }
+footer {
+  margin-bottom: 110px !important;
+}
 header[role="banner"] {
   margin-top: 0em;
   border: 0;
 }
-body.sidebar-first div[role="main"] {
-    left: 25%;
-    width: 75%;
-}
-body.sidebar-first div.sidebar-first {
-    left: -75%;
-    width: 25%;
-    font-size: .8em;
-    line-height: 1.2;
-}
-
 .siteinfo {
-  padding: 5% 5% 2% 5%;
+  margin: 5% 0 2% 5%;
+  padding: 8px 0 0;
+  border-bottom: 1px solid #903;
+  border-top: 1px solid #903;
+  width: 90%;
 }
 .header-region {
   padding: 0 5% 3% 5%;
@@ -51,6 +60,9 @@ h1 {
     /*font-variant: small-caps;*/
     margin-bottom: 1.5em;
     padding-bottom: 0.75em;
+}
+.front h1 {
+  color: #903;
 }
 h2 {
   font-size: 1.6em;
@@ -88,7 +100,7 @@ img {
   margin-bottom: 0.2em;
 }
 .image-field-caption {
-  font-size: .8em;
+  font-size: .7em;
   margin: 0;
   float: left;
   clear: both;
@@ -99,6 +111,12 @@ img {
   margin-top: .2em;
   margin-bottom: 1.6em;
   line-height: 1.2;
+}
+
+.zitat {
+  margin-top: 1.5em;
+  line-height: 1.2;
+  font-size: .9em;
 }
 
 /* Paragraphs */
@@ -114,11 +132,11 @@ img {
 .paragraphs-items-field-inhalt .field-name-field-image {
   float: left;
   max-width: 250px;
-  margin: 1em;
+  margin: 1.5em 1em 1em;
 }
 
-.paragraphs-items-field-inhalt .field-name-field-image > img {
-  margin-bottom: 1em;
+.paragraphs-items-field-inhalt .field-name-field-image > img:not(:first-child) {
+  margin-top: 1em;
 }
 .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
   max-width: 23em;
@@ -169,6 +187,14 @@ img {
   min-width: 300px;
   padding-right: 5%;
 }
+
+/* Nur Bild */
+.paragraphs-item-bild .field-type-image {
+  float: left;
+  clear: both;
+  margin: 1.5em 1em 1em;
+}
+
 
 /* Menu */
 .active, .active-trail {
@@ -322,7 +348,21 @@ footer nav li {
 .mean-container .mean-nav ul li a.mean-expand:hover {
   background: #903;
 }
-
+.mean-container .mean-bar {
+  margin-bottom: 1em;
+}
+/* Editor Tabs Menu */
+#main-content ul.tabs {
+  padding: 0;
+  margin-left: 0;
+  border-bottom: 1px solid #eee;
+}
+.tabs li {
+  padding: 0;
+}
+ul.primary li a {
+  padding: 0 .5em;
+}
 
 /* Künstler und Kooperationen */
 
@@ -332,6 +372,17 @@ footer nav li {
   width: 22%;
   padding-right: 3%;
   margin-top: 1em;
+}
+.artist .field-name-field-image {
+  float: left;
+  clear: left;
+  width: 22%;
+  padding-right: 3%;
+  margin-top: 1.5em;
+}
+.node-type-institution .field-name-field-image {
+  float: left;
+  margin: 1.25em 2em 1em 0;
 }
 .artist {
   border-top: 1px solid #eee;
@@ -362,13 +413,16 @@ footer nav li {
   margin-bottom: 1.5em;
   border-bottom: 1px solid #eee;
 }
-.field-name-field-kleingedrucktes {
+.field-name-field-kleingedrucktes, .kleingedrucktes, .Bildunterschrift {
   font-size: .8em;
 }
-.publikation h2, .projekt h2 {
-  margin-top: -0.4em;
+.foto {
+  color: #999;
 }
-.publikation > div > div {
+.publikation h2, .projekt h2 {
+  margin-top: -0.5em;
+}
+.publikation > div {
     border-bottom: 1px solid #eee;
     margin-bottom: 2em;
     padding-bottom: 2em;
@@ -470,6 +524,24 @@ div.sidebar-first h2 {
 }
 .marker, .form-required {
   color: #903;
+}
+@media only screen and (min-width : 768px) {
+  #main-content, div.sidebar-first, div.sidebar-second {
+  padding: 2% 0 2% 5% !important;
+  width: auto;
+}
+  body.sidebar-first #main-content {
+    float: left;
+    left: 25%;
+    width: 75% !important;
+  }
+  body.sidebar-first div.sidebar-first {
+      left: -75%;
+      width: 25% !important;
+      font-size: .8em;
+      line-height: 1.2;
+      float: left;
+  }
 }
 @media only screen and (min-width : 55em) {
   .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
