@@ -522,6 +522,10 @@ div.sidebar-first h2 {
   max-width: 15em;
   margin-bottom: 0.3em;
 }
+.mailchimp-newsletter-wrapper input, .mailchimp-newsletter-wrapper 
+label {
+    display: none;
+}
 .marker, .form-required {
   color: #903;
 }
