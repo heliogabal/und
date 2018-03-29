@@ -91,6 +91,14 @@ p {
 img {
   max-width: 100%;
   height: auto;
+  border: 1px solid #eee;
+}
+a img {
+  border: 1px solid #eee;
+}
+.siteinfo a img,
+.artist a img {
+  border: none;
 }
 #main-content ul {
   padding-left: 1em;
@@ -463,7 +471,8 @@ ul.primary li a {
   float: left;
   clear: left;
   margin-bottom: 1em;
-  padding-right: 2em;
+  max-width: 230px;
+  /*padding-right: 2em;*/
 }
 .projekt .field-name-title,
 .projekt .field-name-body,
@@ -522,7 +531,7 @@ div.sidebar-first h2 {
   max-width: 15em;
   margin-bottom: 0.3em;
 }
-.mailchimp-newsletter-wrapper input, .mailchimp-newsletter-wrapper 
+.mailchimp-newsletter-wrapper input, .mailchimp-newsletter-wrapper
 label {
     display: none;
 }
