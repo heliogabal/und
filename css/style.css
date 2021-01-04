@@ -33,14 +33,14 @@ header[role="banner"] {
   border: 0;
 }
 .siteinfo {
-  margin: 5% 0 2% 5%;
+  margin: 2% 5%;
   padding: 8px 0 0;
   border-bottom: 1px solid #903;
   border-top: 1px solid #903;
   width: 90%;
 }
 .header-region {
-  padding: 0 5% 3% 5%;
+  padding: 0 5% 2%;
   width: 100%;
 }
 .header-region > div {
@@ -51,6 +51,57 @@ div.sidebar-first,
 div.sidebar-second {
   padding: 2% 0 2% 5%;
   border: 0;
+}
+.front #main-content {
+  padding: 0 0 2% 5% !important;
+}
+.front .slick {
+  margin-left: -5%;
+  max-width: 1400px;
+}
+.front .paragraphs-item-text {
+  max-width: 100%;
+}
+.slick-dots {
+  bottom: -50px;
+}
+.views-field.views-field-field-link {
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  padding: .5rem 1rem;
+  background: #fff;
+  opacity: .6;
+}
+
+.views-field.views-field-field-link a {
+  color: #903;
+  display: block;
+  text-align: center;
+}
+.views-field.views-field-field-link a:hover {
+  text-decoration: none;
+}
+
+.slide__caption {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  padding: 0;
+  background: #00000080;
+}
+.slide__caption a,
+.slide__caption a:visited {
+  display: block;
+  padding: .5rem 5%;
+  color: #ffffff;
+}
+.slide__caption a:hover {
+  text-decoration: none;
+}
+.slide__link {
+  margin: 0 auto;
 }
 
 /* Typography */
@@ -63,6 +114,7 @@ h1 {
 }
 .front h1 {
   color: #903;
+  display: none;
 }
 h2 {
   font-size: 1.6em;
@@ -95,6 +147,9 @@ img {
 }
 a img {
   border: 1px solid #eee;
+}
+img[alt="Davide Brocchi"] {
+  filter: grayscale(1);
 }
 .siteinfo a img,
 .artist a img {
@@ -149,7 +204,18 @@ a img {
 .paragraphs-item-text, .field-name-body, .field-name-field-text, .field-name-field-kleingedrucktes {
   max-width: 23em;
 }
-/* Text mit Bild links*/
+/* Text mit Bild links - ist jetzt aber rechts ;-) */
+
+.paragraphs-item-text-mit-bild-links > .content {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .paragraphs-item-text-mit-bild-links > .content {
+    flex-direction: row-reverse;
+  }
+}
 .paragraphs-item-text-mit-bild-links {
   clear: both;
 }
@@ -170,9 +236,16 @@ a img {
 .ds-2col-stacked-fluid > .group-left {
   float: left;
   width: auto;
-  min-width: 300px;
+  max-width: 300px;
   padding-right: 2em;
 }
+
+.page-node-16 .field-name-field-inhalt {
+    display: flex;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #eee;
+}
+
 /* Text mit Bild rechts*/
 .paragraphs-item-text-mit-bild-rechts {
   clear: both;
@@ -201,6 +274,15 @@ a img {
   float: left;
   clear: both;
   margin: 1.5em 1em 1em;
+}
+
+/* Archiv */
+
+.page-projects-realized .field-name-node-link {
+  display: none;
+}
+.page-projects-realized .projekt img {
+  margin-bottom: 0;
 }
 
 
@@ -395,6 +477,7 @@ ul.primary li a {
 .artist {
   border-top: 1px solid #eee;
   position: relative;
+  display: flex;
 }
 .artists .field-name-body,
 .institution .field-name-body {
@@ -407,13 +490,7 @@ ul.primary li a {
   padding-right: 5%;
 }
 .field-name-node-link {
-  /*float: right;
-  text-align: right;
-  width: 100%;*/
   padding: 0 2% 1em 0;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 /* Publikationen */
@@ -441,6 +518,11 @@ ul.primary li a {
 .publikation > div:last-of-type {
   border: 0;
 }
+.field-name-field-video .media-vimeo-player,
+.field-name-field-video .media-youtube-player {
+    width: 250px;
+    height: auto;
+}
 
 /* Projekte */
 .page-projekte h1 {
@@ -455,29 +537,55 @@ ul.primary li a {
 }
 .node-projekt.node-projekt h2,
 .ds-2col-fluid.node-projekt h2 {
-	margin-top: 0;
+  margin-top: 0;
 }*/
 .projekt > div {
   position: relative;
-  float: left;
+  display: flex;
+  flex-wrap: wrap;
   border-bottom: 1px solid #eee;
   margin-bottom: 2em;
   padding: 0 5% 1em 0;
+  justify-content: space-between;
 }
 .projekt > div:last-of-type {
   border: 0;
 }
+.projekt .field-name-title {
+  width: 100%;
+}
 .projekt img {
-  float: left;
-  clear: left;
-  margin-bottom: 1em;
-  max-width: 230px;
+  margin-bottom: 0;
+  max-width: 250px;
   /*padding-right: 2em;*/
 }
-.projekt .field-name-title,
-.projekt .field-name-body,
-.projekt .field-name-field-downloads {
-  margin-left: 320px;
+.projekt .field-name-field-image {
+  max-width: 250px;
+}
+
+/* Einzelansicht Projekt */
+.node-type-projekt h1 {
+  display: none;
+}
+.projekt-einzeln {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.projekt-einzeln .field-name-title {
+  width: 100%;
+}
+.projekt-einzeln .field-name-body {
+  min-width: 500px;
+  max-width: 65%;
+  margin-right: 5%;
+}
+.projekt-einzeln .field-name-field-image {
+  min-width: 250px;
+  max-width: 30%;
+}
+.projekt-einzeln .field-name-backlink-js {
+  width: 100%;
 }
 
 /* News */
@@ -538,6 +646,67 @@ label {
 .marker, .form-required {
   color: #903;
 }
+/* Team View */
+.page-team-neu #main-content,
+.page-team #main-content {
+  padding: 2% 5% !important;
+}
+.page-team .field-name-body {
+  font-style: italic;
+  text-align: center;
+}
+.team-list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: space-between;
+}
+.team-list ul li {
+  min-width: 150px;
+  max-width: 250px;
+  margin: 1.1rem !important;
+  list-style: none !important;
+  display: flex;
+  flex-direction: column;
+}
+.team-list .image-field-caption {
+  display: none;
+}
+.team-list h2 {
+  text-align: center;
+  font-size: 1em;
+}
+.team-list .field-name-node-link {
+  position: static;
+  text-align: center;
+  padding: 0;
+  margin-top: auto;
+}
+.team-list .field-name-node-link a {
+  border: 1px solid #222;
+  padding: .5rem;
+  margin: 1rem;
+  display: block;
+  border-radius: 3px;
+}
+.team-list .field-name-node-link a:hover {
+  border-color: #903;
+  color: #903;
+  text-decoration: none;
+}
+.team-list .field.field-name-field-image img {
+  border-radius: 3px;
+}
+.node-type-teammitglied .field.field-name-field-image {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    margin-right: 2em;
+}
+.node-type-teammitglied .field-name-body p:first-of-type {
+  margin-top: 0;
+}
+
 @media only screen and (min-width : 768px) {
   #main-content, div.sidebar-first, div.sidebar-second {
   padding: 2% 0 2% 5% !important;

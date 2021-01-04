@@ -136,3 +136,23 @@ function und_preprocess_html(&$vars) {
   $vars['rdf']->namespaces = ' xmlns="http://www.w3.org/1999/xhtml" prefix="' . $prefix . '"';
   $vars['rdf']->profile = '';
 }
+
+/* get rid of file link icons */
+function und_file_link($variables) {
+  $file = $variables['file'];
+
+  $url = file_create_url($file->uri);
+
+  $options = array(
+    'attributes' => array(
+       'type' => $file->filemime . '; length=' . $file->filesize,
+     ),
+  );
+
+  if (empty($file->description)) {
+    $link_text = $file->filename;
+  } else {
+    $link_text = $file->description;
+    $options['attributes']['title'] = check_plain($file->filename);
+  }
+}
